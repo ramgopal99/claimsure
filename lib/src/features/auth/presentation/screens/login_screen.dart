@@ -12,6 +12,11 @@ class LoginScreen extends ConsumerStatefulWidget {
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
+/// Demo credentials used for auto-apply on the login screen (dev/testing).
+const String _demoEmail = 'demo@claimsure.app';
+const String _demoName = 'Demo User';
+const String _demoPassword = 'demo1234';
+
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
@@ -19,6 +24,18 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _nameController = TextEditingController();
   bool _obscurePassword = true;
   bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _applyDemoCredentials();
+  }
+
+  void _applyDemoCredentials() {
+    _nameController.text = _demoName;
+    _emailController.text = _demoEmail;
+    _passwordController.text = _demoPassword;
+  }
 
   @override
   void dispose() {
@@ -206,6 +223,17 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             ),
                           )
                         : const Text('Sign in'),
+                  ),
+                  const SizedBox(height: 16),
+                  Center(
+                    child: Text(
+                      'Demo credentials are auto-applied for quick testing.',
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                        fontStyle: FontStyle.italic,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   const SizedBox(height: 32),
                 ],
