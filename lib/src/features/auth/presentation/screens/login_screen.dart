@@ -114,7 +114,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     controller: _nameController,
                     decoration: const InputDecoration(
                       labelText: 'Full name',
-                      hintText: 'John Doe',
                       prefixIcon: Icon(Icons.person_outline_rounded),
                     ),
                     textInputAction: TextInputAction.next,
@@ -132,7 +131,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     controller: _emailController,
                     decoration: const InputDecoration(
                       labelText: 'Email',
-                      hintText: 'you@hospital.com',
                       prefixIcon: Icon(Icons.email_outlined),
                     ),
                     textInputAction: TextInputAction.next,
@@ -153,7 +151,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     controller: _passwordController,
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      hintText: '••••••••',
                       prefixIcon: const Icon(Icons.lock_outline_rounded),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -209,14 +206,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             ),
                           )
                         : const Text('Sign in'),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Demo: use any email, name, and password (4+ chars) to sign in.',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                    ),
-                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 32),
                 ],

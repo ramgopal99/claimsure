@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/presentation/screens/about_screen.dart';
+import '../../features/auth/presentation/screens/help_support_screen.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/main_dashboard_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
@@ -34,6 +36,22 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         name: routeDashboard,
         pageBuilder: (context, state) => const MaterialPage(
           child: MainDashboardScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/help',
+        name: routeHelpSupport,
+        pageBuilder: (context, state) => MaterialPage(
+          key: const ValueKey('HelpSupport'),
+          child: const HelpSupportScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/about',
+        name: routeAbout,
+        pageBuilder: (context, state) => MaterialPage(
+          key: const ValueKey('About'),
+          child: const AboutScreen(),
         ),
       ),
       GoRoute(

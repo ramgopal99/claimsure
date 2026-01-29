@@ -126,9 +126,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     letterSpacing: -0.5,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
                 Text(
-                  'Hospital Claims Management',
+                  'by MEDOC HEALTH',
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),

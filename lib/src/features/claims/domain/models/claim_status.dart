@@ -21,5 +21,21 @@ extension ClaimStatusX on ClaimStatus {
         return 'Partially Settled';
     }
   }
+
+  /// Short label for chart axes (avoids overlap on mobile).
+  String get shortLabel {
+    switch (this) {
+      case ClaimStatus.draft:
+        return 'Draft';
+      case ClaimStatus.submitted:
+        return 'Sub';
+      case ClaimStatus.approved:
+        return 'App';
+      case ClaimStatus.rejected:
+        return 'Rej';
+      case ClaimStatus.partiallySettled:
+        return 'Part';
+    }
+  }
 }
 

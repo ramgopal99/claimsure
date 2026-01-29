@@ -72,13 +72,13 @@ class _MainDashboardScreenState extends ConsumerState<MainDashboardScreen>
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Claimsure'),
+        title: const Text('Claimsure by MEDOC HEALTH'),
         bottom: TabBar(
           controller: _tabController,
           tabs: const [
             Tab(text: 'Claims', icon: Icon(Icons.folder_open_rounded)),
             Tab(text: 'Analysis', icon: Icon(Icons.analytics_outlined)),
-            Tab(text: 'Profile', icon: Icon(Icons.person_rounded)),
+            Tab(text: 'Settings', icon: Icon(Icons.settings_rounded)),
           ],
         ),
       ),

@@ -5,18 +5,18 @@ import 'src/core/router/app_router.dart';
 import 'src/core/theme/app_theme.dart';
 
 void main() {
-  runApp(const ProviderScope(child: ClaimsureApp()));
+  runApp(const ProviderScope(child: MedocHealthApp()));
 }
 
-class ClaimsureApp extends ConsumerWidget {
-  const ClaimsureApp({super.key});
+class MedocHealthApp extends ConsumerWidget {
+  const MedocHealthApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
 
     return MaterialApp.router(
-      title: 'Claimsure',
+      title: 'Claimsure by MEDOC HEALTH',
       debugShowCheckedModeBanner: false,
       theme: buildAppTheme(),
       routerConfig: router,

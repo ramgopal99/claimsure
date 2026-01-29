@@ -13,6 +13,16 @@ class AuthNotifier extends StateNotifier<User?> {
     );
   }
 
+  void updateProfile(String displayName, String email) {
+    if (state == null) return;
+    state = User(
+      id: state!.id,
+      email: email.trim(),
+      displayName: displayName.trim().isNotEmpty ? displayName.trim() : email.split('@').first,
+      avatarUrl: state!.avatarUrl,
+    );
+  }
+
   void logout() {
     state = null;
   }

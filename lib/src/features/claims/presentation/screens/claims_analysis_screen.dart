@@ -517,13 +517,13 @@ class _StatusBarChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              reservedSize: 28,
+              reservedSize: 36,
               getTitlesWidget: (value, meta) {
                 final index = value.toInt();
                 if (index < 0 || index >= statusList.length) {
                   return const SizedBox.shrink();
                 }
-                final label = statusList[index].label.split(' ').first;
+                final label = statusList[index].shortLabel;
                 return SideTitleWidget(
                   meta: meta,
                   space: 6,
@@ -532,6 +532,8 @@ class _StatusBarChart extends StatelessWidget {
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 );
               },
@@ -742,17 +744,22 @@ class _MonthlyClaimsLineChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              reservedSize: 28,
+              reservedSize: 36,
               getTitlesWidget: (value, meta) {
                 final i = value.toInt();
                 if (i < 0 || i >= months.length) return const SizedBox.shrink();
                 return SideTitleWidget(
                   meta: meta,
                   space: 6,
-                  child: Text(
-                    monthFormat.format(months[i]),
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      monthFormat.format(months[i]),
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 );
@@ -876,17 +883,22 @@ class _MonthlySettledLineChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              reservedSize: 28,
+              reservedSize: 36,
               getTitlesWidget: (value, meta) {
                 final i = value.toInt();
                 if (i < 0 || i >= months.length) return const SizedBox.shrink();
                 return SideTitleWidget(
                   meta: meta,
                   space: 6,
-                  child: Text(
-                    monthFormat.format(months[i]),
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      monthFormat.format(months[i]),
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 );
